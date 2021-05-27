@@ -41,6 +41,9 @@
   #   keyMap = "us";
   # };
 
+  # disable suspend on lid close :((( WTF gnome??!?!
+  services.logind.lidSwitch = "lock";
+
   # Enable Cinnamon Desktop Environment
   services.xserver.enable = true;
   services.xserver.displayManager.lightdm.enable = true;
@@ -66,7 +69,7 @@
      packages = with pkgs; [ discord zoom-us ];
   };
 
-# set the *correct* default editor.
+  # set the *correct* default editor.
   services.emacs.defaultEditor = true;
 
   # List packages installed in system profile. To search, run:
@@ -76,6 +79,9 @@
      wget
      xorg.xkill
      xsel
+
+     # virtualization
+     virtualbox
 
      # Preferred browser
      firefox
@@ -93,6 +99,12 @@
      git
      git-cola
      gitg
+
+     # Cad / Drawing
+     inkscape
+     solvespace
+     freecad
+     gimp
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
